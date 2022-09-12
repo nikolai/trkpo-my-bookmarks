@@ -1,6 +1,23 @@
 # Сервис хранения интернет-закладок
 Многопользовательский сервис предоставляет REST API для управления интернет-закладками. Написан на Java с использованием SpringBoot.
 
+## Начало работы
+1. Установи jdk 17+ (проверить в консоли версию `java -version`)
+2. Зарегистрируйся на gitlab.com
+3. Создай новый репозиторий через импорт этого в gitlab через [import project](https://gitlab.com/projects/new#import_project) по URL (Repository by URL)
+4. Прочитай про то, как создавать ветки в git, работая в gitlab [gitlab flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html).
+5. Склонируй свой репозиторий на локальную машину
+   ```shell
+   git clone https://gitlab.com/<USER>/trkpo-my-bookmarks.git
+   ```
+   где `USER` - твое имя пользователя. URL репозитория можно скопировать, нажав кнопку `Clone` в интерфейсе репозитория в Gitlab.
+
+В дальнейшем, выполняя задания, любые логически законченные изменения делай на отдельной ветке и создавай MergeRequest:
+1. Создай branch `git branch <new-branch>`, `git checkout <new-branch>`
+2. Изменяй файлы и сделай коммит и пуш изменений в репозиторий.
+3. Создай MergeRequest в интерфейсе gitlab, выбери созданную ветку, а целевую ветку - `main`.
+4. Вмержи изменения в ветку `main`.
+
 ## Сборка, запуск и тестирование приложения
 Сборка проекта может быть осуществлена командой
 ```shell
@@ -120,6 +137,12 @@ deploy-job:      # This job runs in the deploy stage.
     - echo "Deploying application..."
     - echo "Application successfully deployed."
 ```
+
+Запустите проект с помощью
+```shell
+./gradlew bootRun
+```
+Исследуйте работоспособность проекта с помощью инструментов [Postman](https://www.postman.com/) или [Insomnia](https://insomnia.rest/download) и отправке POST и GET запросов на эндпоинты сервиса.
 
 Исправьте ошибку **ISSUE-1**.
 ___
